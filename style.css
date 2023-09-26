@@ -56,14 +56,24 @@ body {
 .graph-switch:hover {
     filter: drop-shadow(10px 10px 1rem blue)
 }
-.scan {
+#scan {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
 }
 .scan-but {
     width: 200px;
     height: 80px;
     border-radius: 20px;
-
+    align-self: center;
+    background-color: rgb(115, 28, 196);
+    color: white;
+}
+#code-area {
+    margin-top: 40px;
+    width: 600px;
+    height: 600px;
+    border: 3px solid rgb(115, 28, 196);
+    border-radius: 20px;
 }
