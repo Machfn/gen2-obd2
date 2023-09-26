@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <div id="fast">
+        <div class="fast-data">
+            <h2>Speed: </h2>
+            <h1 id="live-speed">80</h1>
+        </div>
+        <div class="fast-data">
+            <h2>RPM: </h2>
+            <h1 id="live-RPM">4800</h1>
+        </div>
+        <div class="fast-data">
+            <h2>Intake Temp:</h2>
+            <h1 id="live-intake">40</h1>
+        </div>
+    </div>
+    <div id="graphs">
+        <div id="live-graph"></div>
+        <div id="but-ar">
+            <button class="graph-switch" hx-get="/oil-temp-graph" hx-trigger="click" hx-target="#live-graph" hx-swap="innerHTML">Oil Temp</button>
+            <button class="graph-switch">Coolant Temp</button>
+            <button class="graph-switch">Intake Temp</button>
+            <button class="graph-switch">Fuel Consumption</button>
+            <button class="graph-switch">Fuel Pressure</button>
+            <button class="graph-switch">Airflow Rate</button>
+            <button class="graph-switch">Speed</button>
+            <button class="graph-switch">Throttle Position</button>
+        </div>
+    </div>
+    <div id="scan">
+        <button class="scan-but" hx-post="/scan" hx-trigger="click" hx-target="#code-area" hx-swap="innerHTML">Scan For Codes</button>
+        <div id="code-area">
+
+        </div>
+    </div>
+</body>
+</html>
