@@ -5,6 +5,7 @@
     <title>Live</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <script src="sus.js"></script>
 </head>
 <body>
     <header>
@@ -25,9 +26,11 @@
         </div>
     </div>
     <div id="graphs">
-        <div id="live-graph"></div>
+        <div id="live-graph">
+            <iframe id="live-source" class="graph" src="http://127.0.0.1:5550/oil_graph" frameborder="0"></iframe>
+        </div>
         <div id="but-ar">
-            <button class="graph-switch" hx-get="/oil-temp-graph" hx-trigger="click" hx-target="#live-graph" hx-swap="innerHTML">Oil Temp</button>
+            <button class="graph-switch" onclick="updateFrame('oil_graph')" >Oil Temp</button>
             <button class="graph-switch">Coolant Temp</button>
             <button class="graph-switch">Intake Temp</button>
             <button class="graph-switch">Fuel Consumption</button>
