@@ -34,7 +34,7 @@ def update_graph(n):
 
     # Create the graph
     layout = go.Layout(
-        # title="live Graph",
+        title="Oil Temperature Live Graph",
         xaxis=dict(range=[min(x_data), max(x_data)]),
         yaxis=dict(range=[min(y_data), max(y_data)]),
     )
