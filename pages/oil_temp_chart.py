@@ -3,7 +3,9 @@ from dash import dcc, html, callback
 from dash.dependencies import Output, Input
 import plotly.graph_objs as go
 import random
+from comp.obd import LiveData
 
+oilTempFigs = []
 
 dash.register_page(__name__, path="/oil_graph")
 
@@ -19,8 +21,9 @@ layout = html.Div(
 @callback(Output("live-graph", "figure"), [Input("graph-update", "n_intervals")])
 def update_graph(n):
     #generating the data
-    x_data = list(range(10))
-    y_data = [random.randint(0, 100) for _ in range(10)]
+    x_data = list(range(len(oilTempFigs)))
+    oilTempFigs.append(LiveData.oil_temp_live())
+    y_data = oilTempFigs
 
     #create the graph trace
     trace = go.Scatter(

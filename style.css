@@ -63,6 +63,7 @@ body {
     width: 100%;
 }
 .scan-but {
+    margin-top: 10px;
     width: 200px;
     height: 80px;
     border-radius: 20px;

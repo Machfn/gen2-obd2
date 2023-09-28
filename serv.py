@@ -6,9 +6,9 @@ from dash.dependencies import Output, Input
 import plotly.graph_objs as go
 import random
 
-
 #initializing the Dash app
 app = Dash(__name__, use_pages=True)
+
 
 
 if __name__ == "__main__":
