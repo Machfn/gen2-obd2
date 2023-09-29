@@ -73,8 +73,12 @@ body {
 }
 #code-area {
     margin-top: 40px;
-    width: 1200px;
-    height: 600px;
+    width: 1250px;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 3px solid rgb(115, 28, 196);
     border-radius: 20px;
+    margin-bottom: 50px;
 }

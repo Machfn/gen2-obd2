@@ -29,5 +29,7 @@ async def intaker():
         output = json.dumps(random.random() * 55)
         await websocket.send(output)
 
+
 if __name__ == "__main__":
     app.run(port=6112)
+

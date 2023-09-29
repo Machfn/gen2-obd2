@@ -37,7 +37,7 @@
                 }
             </script>
             <button class="graph-switch" onclick="updateFrame('oil_graph')" >Oil Temp</button>
-            <button class="graph-switch" onclick="updateFrame('coolant_temp')" >Coolant Temp</button>
+            <button class="graph-switch" onclick="updateFrame('coolant_graph')" >Coolant Temp</button>
             <button class="graph-switch" onclick="updateFrame('oil_graph')">Intake Temp</button>
             <button class="graph-switch" onclick="updateFrame('oil_graph')">Fuel Consumption</button>
             <button class="graph-switch" onclick="updateFrame('oil_graph')">Fuel Pressure</button>
@@ -47,7 +47,19 @@
         </div>
     </div>
     <div id="scan">
-        <button class="scan-but">Scan For Codes</button>
+        <script>
+            function genCodeArea() {
+                let pr = document.getElementById('code-area');
+                pr.innerHTML = '';
+                let genAc = document.createElement('IFRAME');
+                genAc.src = `http://127.0.0.1:5550/obd_scan`;
+                genAc.style.width = "1250px";
+                genAc.style.height = "648px";
+                genAc.style.borderRadius = "20px";
+                pr.appendChild(genAc);
+                }
+        </script>
+        <button class="scan-but" onclick="genCodeArea()">Scan For Codes</button>
         <div id="code-area">
             
         </div>
