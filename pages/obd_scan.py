@@ -57,5 +57,4 @@ layout = html.Div([
     Input("clear", "n_clicks")
 )
 def generate_code(n_clicks):
-    if n_clicks > 0:
-        return "True"
+    return "Cleared - (Scan Again?)"
