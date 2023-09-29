@@ -12,7 +12,7 @@ class LiveData:
     def new_val(response):
         return response
     
-    
+
     #keeping track of RPM
     def rpm_live():
         LiveData.connection.watch(obd.commands.RPM,callback=LiveData.new_val)
@@ -48,4 +48,7 @@ class LiveData:
     def coolant_temp_live():
         LiveData.connection.watch(obd.commands.COOLANT_TEMP, callback=LiveData.new_val)
     
+
+    def intake_temp_live():
+        LiveData.connection.watch(obd.commands.INTAKE_TEMP, callback=LiveData.new_val)
 

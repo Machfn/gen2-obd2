@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
     <script src="sus.js"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/debug.js"></script>
 </head>
 <body>
     <header>
@@ -30,20 +31,25 @@
             <iframe id="live-source" class="graph" src="http://127.0.0.1:5550/oil_graph" frameborder="0"></iframe>
         </div>
         <div id="but-ar">
+            <script>
+                function updateFrame(new_url) {
+                    document.getElementById('live-source').contentWindow.location = `http://127.0.0.1:5550/${new_url}`
+                }
+            </script>
             <button class="graph-switch" onclick="updateFrame('oil_graph')" >Oil Temp</button>
-            <button class="graph-switch">Coolant Temp</button>
-            <button class="graph-switch">Intake Temp</button>
-            <button class="graph-switch">Fuel Consumption</button>
-            <button class="graph-switch">Fuel Pressure</button>
-            <button class="graph-switch">Airflow Rate</button>
-            <button class="graph-switch">Speed</button>
-            <button class="graph-switch">Throttle Position</button>
+            <button class="graph-switch" onclick="updateFrame('coolant_temp')" >Coolant Temp</button>
+            <button class="graph-switch" onclick="updateFrame('oil_graph')">Intake Temp</button>
+            <button class="graph-switch" onclick="updateFrame('oil_graph')">Fuel Consumption</button>
+            <button class="graph-switch" onclick="updateFrame('oil_graph')">Fuel Pressure</button>
+            <button class="graph-switch" onclick="updateFrame('oil_graph')">Airflow Rate</button>
+            <button class="graph-switch" onclick="updateFrame('oil_graph')">Speed</button>
+            <button class="graph-switch" onclick="updateFrame('oil_graph')">Throttle Position</button>
         </div>
     </div>
     <div id="scan">
-        <button class="scan-but" hx-post="/scan" hx-trigger="click" hx-target="#code-area" hx-swap="innerHTML">Scan For Codes</button>
+        <button class="scan-but">Scan For Codes</button>
         <div id="code-area">
-
+            
         </div>
     </div>
 </body>
