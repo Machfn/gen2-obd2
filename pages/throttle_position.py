@@ -13,7 +13,7 @@ dash.register_page(__name__, path="/throttle_position")
 layout = html.Div(
     [
         dcc.Graph(id="throttle-live-graph", animate=True),
-        dcc.Interval(id="throttle-graph-update", interval=1000, n_intervals=0),
+        dcc.Interval(id="throttle-graph-update", interval=1800, n_intervals=0),
     ]
 )
 

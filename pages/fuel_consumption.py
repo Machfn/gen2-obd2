@@ -13,7 +13,7 @@ dash.register_page(__name__, path="/fuelconsp_graph")
 layout = html.Div(
     [
         dcc.Graph(id="fuelconsp-live-graph", animate=True),
-        dcc.Interval(id="fuelconsp-graph-update", interval=1000, n_intervals=0),
+        dcc.Interval(id="fuelconsp-graph-update", interval=1800, n_intervals=0),
     ]
 )
 

@@ -13,7 +13,7 @@ dash.register_page(__name__, path="/airflow_graph")
 layout = html.Div(
     [
         dcc.Graph(id="airflow-live-graph", animate=True),
-        dcc.Interval(id="airflow-graph-update", interval=1000, n_intervals=0),
+        dcc.Interval(id="airflow-graph-update", interval=1800, n_intervals=0),
     ]
 )
 
