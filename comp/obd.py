@@ -49,6 +49,34 @@ class LiveData:
         LiveData.connection.watch(obd.commands.COOLANT_TEMP, callback=LiveData.new_val)
     
 
+    #celsius
     def intake_temp_live():
         LiveData.connection.watch(obd.commands.INTAKE_TEMP, callback=LiveData.new_val)
+
+    
+    # percent
+    def throttle_temp_live():
+        LiveData.connection.watch(obd.commands.THROTTLE_POS, callback=LiveData.new_val)
+
+
+    # grams/s
+    def airflow_rate_live():
+        LiveData.connection.watch(obd.commands.MAF, callback=LiveData.new_val)
+    
+
+    #kilopascal
+    def fuel_press_live():
+        LiveData.connection.watch(obd.commands.FUEL_PRESSURE, callback=LiveData.new_val)
+    
+    
+
+    def clear_the_codes():
+        obd.commands.CLEAR_DTC
+        
+        codeList = LiveData.gen_DTC()
+
+        if len(codeList) != 0:
+            return "Code Clear Either Failed or They perstained"
+        else:
+            return "Codes Cleared Succesfully"
 
