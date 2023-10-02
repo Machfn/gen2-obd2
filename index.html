@@ -43,14 +43,6 @@
                     if (new_url == "screen_saver") {
                         let yu = document.getElementById('live-source');
                         yu.src = "./svgAnimations/svgAni.html";
-                        // ty = setInterval(() => {
-                        //     document.getElementById('live-source').src = `./svgAnimations/svgAni.html`
-                        //     if (yu.src == "./svgAnimations/justenGoat.html") {
-                        //         document.getElementById('live-source').src = `./svgAnimations/svgAni.html`;
-                        //     } else {
-                        //         document.getElementById('live-source').src = `./svgAnimations/justenGoat.html`;
-                        //     }
-                        // }, 7200)
                     } else {
                         clearInterval(ty);
                         document.getElementById('live-source').src = `http://127.0.0.1:5550/${new_url}`;

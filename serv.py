@@ -1,5 +1,4 @@
 # https://www.kbb.com/obd-ii/
-
 import dash
 from dash import dcc, html, Dash
 from dash.dependencies import Output, Input
