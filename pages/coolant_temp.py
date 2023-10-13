@@ -2,7 +2,7 @@ import dash
 from dash import dcc, html, callback
 from dash.dependencies import Output, Input
 import plotly.graph_objs as go
-# from comp.obd import LiveData
+from comp.obdScan import LiveData
 import random
 
 coolantTempFigs = []

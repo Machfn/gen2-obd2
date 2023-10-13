@@ -4,7 +4,7 @@ import json
 import random
 import time
 from quart_cors import cors
-# from comp.obd import LiveData
+from comp.obdScan import LiveData
 
 app = Quart(__name__)
 app = cors(app)
@@ -12,24 +12,24 @@ app = cors(app)
 @app.websocket("/speed_live")
 async def random_data():
     while True:
-        # output = json.dumps(LiveData.speed_live())
-        output = json.dumps(random.random() * 100)
+        output = json.dumps(LiveData.speed_live())
+        # output = json.dumps(random.random() * 100)
         await websocket.send(output)
 
 
 @app.websocket("/rpm_live")
 async def rpmer():
     while True:
-        # output = json.dump(LiveData.rpm_live())
-        output = json.dumps(random.random() * 7600)
+        output = json.dump(LiveData.rpm_live())
+        # output = json.dumps(random.random() * 7600)
         await websocket.send(output)
 
 
 @app.websocket("/intake_live")
 async def intaker():
     while True:
-        # output = json.dump(LiveData.intake_temp_live())
-        output = json.dumps(random.random() * 55)
+        output = json.dump(LiveData.intake_temp_live())
+        # output = json.dumps(random.random() * 55)
         await websocket.send(output)
 
 # Fuel data
@@ -37,9 +37,9 @@ async def intaker():
 async def fueler():
     i = 100
     while True:
-        # output = json.dump(LiveData.fuel_live())
-        i = i - 1
-        output = i
+        output = json.dump(LiveData.fuel_live())
+        # i = i - 1
+        # output = i
         await websocket.send(json.dumps(output))
         await asyncio.sleep(2)
 

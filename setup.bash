@@ -1,1 +1,1 @@
-pip install plotly, dash, obd, rich, PyInquirer, typer, fkask-cors
+pip install plotly, dash, obd, rich, PyInquirer, typer, flask-cors, quart, quart_cors

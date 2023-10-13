@@ -1,7 +1,7 @@
 from dash import html, callback, Output, Input, clientside_callback, State, dcc
 import dash
 import json
-# from comp.obd import LiveData
+from comp.obdScan import LiveData
 import random
 
 dash.register_page(__name__, path="/obd_scan")

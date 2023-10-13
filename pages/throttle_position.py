@@ -3,7 +3,7 @@ from dash import dcc, html, callback
 from dash.dependencies import Output, Input
 import plotly.graph_objs as go
 import random
-# from comp.obd import LiveData
+from comp.obdScan import LiveData
 
 throttleFigs = []
 
@@ -22,7 +22,7 @@ layout = html.Div(
 def update_graph(n):
     #generating the data
     # x_data = list(range(len(throttleFigs)))
-    # throttleFigs.append(LiveData.throttle_temp_live())
+    # throttleFigs.append(LiveData.throttle_pos_live())
     # y_data = throttleFigs
 
     x_data = list(range(10))

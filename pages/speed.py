@@ -3,7 +3,7 @@ from dash import dcc, html, callback
 from dash.dependencies import Output, Input
 import plotly.graph_objs as go
 import random
-# from comp.obd import LiveData
+from comp.obdScan import LiveData
 
 speedFigs = []
 
