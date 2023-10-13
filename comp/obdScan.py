@@ -83,7 +83,7 @@ class LiveData:
     # percent
     def throttle_pos_live(self):
         # LiveData.connection.watch(obd.commands.THROTTLE_POS, callback=LiveData.new_val)
-        res = LiveData.connection.query(LiveData.throttle_pos_live)
+        res = LiveData.connection.query(LiveData.throttle_position)
         return res.value
 
 
